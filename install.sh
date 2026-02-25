@@ -1,19 +1,15 @@
 confirm() {
-    while true; do
-        read -p "$1 (y/n): " yn
-        case "$yn" in
-            [Yy]|[Yy][Ee][Ss])
-                return 0
-                ;;
-            [Nn]|[Nn][Oo])
-                echo "Aborted."
-                exit 1
-                ;;
-            *)
-                echo "Please answer yes or no."
-                ;;
-        esac
-    done
+
+    read -p "$1 (y/n): " yn
+    case "$yn" in
+        [Yy]|[Yy][Ee][Ss])
+            return 0
+            ;;
+        *)
+            echo "Aborted"
+            exit 1
+            ;;
+    esac
 }
 
 RED_BG="\e[41m"
